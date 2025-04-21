@@ -5,11 +5,12 @@ import java.util.Properties;
 
 public class ConfigFileReader {
     private static Properties properties;
-    private final String propertyFilePath = "configs/configuration.properties";  // Path relative to the classpath
 
     public ConfigFileReader() throws IOException {
         properties = new Properties();
         // Load the property file using ClassLoader
+        // Path relative to the classpath
+        String propertyFilePath = "configs/configuration.properties";
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propertyFilePath);
         // Check if the file is found
         if (inputStream == null) {

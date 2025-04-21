@@ -12,19 +12,19 @@ import java.time.Duration;
 
 public class homepage extends BrowserDriver{
 
-    public void navigateHomepage() throws InterruptedException, IOException {
+    public void navigateHomepage() throws IOException {
         ConfigFileReader configFileReader = new ConfigFileReader();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-        driver.get(configFileReader.getApplicationUrl());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get(ConfigFileReader.getApplicationUrl());
     }
 
-    public void forgotLink()throws InterruptedException {
+    public void forgotLink(){
         driver.findElement(By.xpath(Constants.FORGOT_LINK)).click();
     }
 
-        public void forgotPasswordPage()throws InterruptedException{
-        Assert.assertEquals("Password help assistance", driver.getTitle());
+        public void forgotPasswordPage(){
+        Assert.assertEquals(Constants.FORGOT_PASSWORD_PAGE_TITLE, driver.getTitle());
     }
 
 }
