@@ -4,11 +4,15 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 import pages.homepage;
+import utility.BrowserDriver;
+
 import java.io.IOException;
 
 public class homeStepDefintion  {
     homepage hp =new homepage();
+    WebDriver driver = BrowserDriver.driver;
 
     @Given("I navigate to the homepage")
     public void i_navigate_to_the_homepage() throws InterruptedException, IOException {

@@ -4,6 +4,8 @@ import dataProvider.ConfigFileReader;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import utility.BrowserDriver;
+import utility.Constants;
+
 import java.io.IOException;
 import java.time.Duration;
 
@@ -18,7 +20,7 @@ public class homepage extends BrowserDriver{
     }
 
     public void forgotLink()throws InterruptedException {
-        driver.findElement(By.xpath("//div[@class =\"forgot-link\"]")).click();
+        driver.findElement(By.xpath(Constants.FORGOT_LINK)).click();
     }
 
         public void forgotPasswordPage()throws InterruptedException{

@@ -1,24 +1,19 @@
 package utility;
 
-import org.junit.After;
-import org.junit.Before;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 
 public class Hooks {
-    public static BrowserDriver driver;
 
     @Before
-    public void setUp(){
-        try {
-            if (driver == null){
-                driver = new BrowserDriver();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void setUp() {
+        new BrowserDriver(); // Initializes if needed
+
     }
 
     @After
-    public void tearDown(){
-        driver.close();
+    public void tearDown() {
+        BrowserDriver.close(); // Always try to close
     }
 }
